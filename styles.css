@@ -111,3 +111,22 @@
     .liquid-orb, .swim-sphere { animation: none; }
     .swim-aura { filter: blur(20px); }
 }
+
+/* Shared detail layout accommodates project artwork and longer titles. */
+.detail-art > .project-art {
+    width: 100%;
+    height: auto;
+    max-height: 490px;
+    object-fit: contain;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+}
+.detail-copy h1 {
+    display: block;
+    font-size: clamp(36px, 4.8vw, 68px);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+}
+@media (max-width:760px) { .detail-art > .project-art { max-height: 380px; } }

@@ -8,7 +8,7 @@ Implemented November 2, 2026 against the supplied Milestone 2 specification. Per
 | --- | --- | --- |
 | `/project2` | `templates/project2/index.html` | Independent copy of the Milestone 1 homepage, restyled in monochrome glass |
 | `/project2/products` | `templates/project2/products.html` | Six projects, category navigation, pictures, names, estimated exploration times, detail links |
-| `/project2/details` | `templates/project2/details.html` | Shared GEMMA detail mock-up, image, description, exploration estimate, Add to exploration list, platform, language, backend, voice workflow |
+| `/project2/details` | `templates/project2/details.html` | GEMMA detail page (legacy URL), image, description, exploration estimate, Add to exploration list, platform, language, backend, voice workflow |
 | `/project2/cart` | `templates/project2/cart.html` | Two items, images, minutes per session, session counts, Update/Remove, row times, total exploration time, Start exploring |
 
 The existing `/project` homepage and its stylesheet/assets remain unchanged. The activity landing page now links to both milestones. The duplicate `ActivityWebserver 2` folder was left unchanged; use the canonical `submission/ActivityWebserver` folder and the Milestone 2 ZIP.
@@ -19,7 +19,7 @@ The existing `/project` homepage and its stylesheet/assets remain unchanged. The
 - One stylesheet: `static/css/project2/styles.css`. Images and resume are independently copied to `static/img/project2` and `static/files/project2`.
 - All local assets use Flask `url_for`; navigation also uses `url_for`. A simulated `/~sampleid` URL prefix passes.
 - Catalog uses CSS Grid, with three cards per desktop row and one card per mobile row. No layout tables.
-- All catalog cards link to the same GEMMA details page, as specified.
+- Per Andre’s subsequent request, catalog and cart cards now link to project-specific detail pages. The original shared GEMMA mock-up has been replaced while its legacy URL remains valid.
 - Quantities submit a GET form to Flask. `app.py` computes integer row minutes and total exploration time and passes template variables to `cart.html`. Core navigation and calculations do not require JavaScript.
 - Add, Remove, and Start exploring intentionally do nothing, as appropriate for mock-ups. No purchases, payments, authentication, or cart persistence are implemented.
 - Default exploration plan: GEMMA 30 min + Jess 45 min = 75 min.
@@ -73,3 +73,7 @@ To regenerate images, run `scripts/optimize_project_images.py` with the bundled 
 ## School-server startup compatibility
 
 Milestone 2 routes and project data now live directly in `app.py`. Startup no longer relies on importing a sibling `project2.py` file. Local checks pass for normal app imports, package-style imports, and importing `app.py` by absolute path from an unrelated working directory. This removes a potential import-path failure, but the truncated school-server log did not include its final exception, so the original server failure is not yet confirmed.
+
+## Project navigation improvement
+
+Each of the six projects now opens its matching detail page. A shared data-driven template supplies the name, description, image, exploration minutes, technical information, code-tour suggestions, and correct GitHub repository. Unknown IDs return 404. Static exports include five additional detail HTML files. Route and isolated-export tests verify all six destinations. Browser checks confirmed the Jess card opens Jess and the long Swift Is My Life title fits at 1440px and 390px. School-server deployment and the four external browsers remain unverified.

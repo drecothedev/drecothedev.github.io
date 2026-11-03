@@ -3,7 +3,7 @@ from pathlib import Path
 import re, sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'submission/ActivityWebserver'))
-from app import app
+from app import app, PROJECTS
 from html.parser import HTMLParser
 
 class Page(HTMLParser):
@@ -39,7 +39,24 @@ with app.test_client() as client:
     products=client.get('/project2/products').get_data(as_text=True)
     assert products.count('class="product-card"')==6
     assert '<table' not in products
-    assert products.count('href="/project2/details"')==12
+    detail_urls = []
+    for project in PROJECTS:
+        url = app.url_map.bind('localhost').build('project2_details', {'project_id': project['id']})
+        detail_urls.append(url)
+        assert products.count('href="' + url + '"') == 2, project['id']
+        detail = client.get(url)
+        assert detail.status_code == 200, url
+        html = detail.get_data(as_text=True)
+        assert '<h1>' + project['name'] + '</h1>' in html, url
+        assert project['repository_url'] in html, url
+        assert str(project['exploration_minutes']) + ' min' in html, url
+        for tag, attrs in Page(html).tags:
+            if tag == 'img': assert client.get(attrs['src']).status_code == 200, url
+    assert len(set(detail_urls)) == len(PROJECTS)
+    assert client.get('/project2/details/unknown-project').status_code == 404
+    assert '<h1>GEMMA</h1>' in client.get('/project2/details').get_data(as_text=True)
+    cart = client.get('/project2/cart').get_data(as_text=True)
+    assert '/project2/details/jess' in cart
     for category,count in [('apps',4),('languages',1),('learning',1),('invalid',6)]:
         html=client.get('/project2/products?category='+category).get_data(as_text=True)
         assert html.count('class="product-card"')==count
@@ -59,4 +76,4 @@ with app.test_client() as client:
     html=client.get('/project2',environ_overrides={'SCRIPT_NAME':'/~sampleid'}).get_data(as_text=True)
     assert '/~sampleid/static/css/project2/styles.css' in html
     assert '/~sampleid/project2/products' in html
-print('PASS: all routes, internal links/assets, six products, categories, shared layout, deferred spotlight script, cart totals, invalid quantities, and NetID prefix.')
+print('PASS: all routes, internal links/assets, six products, categories, six matching detail pages, shared layout, deferred spotlight script, cart totals, invalid quantities, and NetID prefix.')

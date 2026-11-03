@@ -79,8 +79,23 @@ class BuildWorkflowTests(unittest.TestCase):
             'index.html', 'products.html', 'products-apps.html',
             'products-languages.html', 'products-learning.html',
             'details.html', 'cart.html', 'current-project.html',
+            'details-jess.html', 'details-sxmpler.html', 'details-swift.html',
+            'details-worder.html', 'details-converter.html',
         }
         self.assertEqual(expected, {path.name for path in output.glob('*.html')})
+        catalog = (output/'products.html').read_text()
+        for filename, name, repository in [
+            ('details.html', 'GEMMA', 'GemmaClean'),
+            ('details-jess.html', 'Jess', 'JessLangCLI'),
+            ('details-sxmpler.html', 'Sxmpler', 'Sxmpler27'),
+            ('details-swift.html', 'Swift Is My Life', 'Swift-Is-MyLife'),
+            ('details-worder.html', 'Worder', 'Worder'),
+            ('details-converter.html', 'Yen to USD', 'YenToUSDConverter'),
+        ]:
+            self.assertIn('href="' + filename + '"', catalog)
+            detail = (output/filename).read_text()
+            self.assertIn('<h1>' + name + '</h1>', detail)
+            self.assertIn('https://github.com/drecothedev/' + repository + '"', detail)
         responsive_candidates = 0
         for page in output.glob('*.html'):
             for tag, attributes in Elements(page.read_text()).elements:

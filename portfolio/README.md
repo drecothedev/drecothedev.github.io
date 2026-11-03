@@ -1,6 +1,6 @@
 # Andre Jones — Milestone 2 preview
 
-A black, white, and gray glass portfolio with a small JavaScript cursor spotlight. The homepage preserves Andre’s writing and project selection; the catalog, GEMMA details, and sample cart implement the Milestone 2 page designs.
+A black, white, and gray glass portfolio with a small JavaScript cursor spotlight. The homepage preserves Andre’s writing and project selection; the catalog, six project detail pages, and sample cart implement the Milestone 2 page designs.
 
 ## Canonical course source
 
@@ -53,3 +53,7 @@ Swim has a dedicated page at `current-project.html` in the hosted preview and `/
 - Route, asset, responsive-image, and cart-calculation verification passed; browser review confirmed the optimized screenshot and cursor effect. No runtime framework, external fonts, or new runtime dependencies were added.
 
 To regenerate images, run `scripts/optimize_project_images.py` with the bundled Pillow-enabled Python runtime. Flask itself does not need Pillow. Then run `python3 scripts/export_milestone2_preview.py` to refresh the hosted files.
+
+## Project-specific details
+
+Catalog and cart links carry the project ID to `/project2/details/<project_id>`. `/project2/details` still opens GEMMA for backward compatibility. Each project has its own description, image, exploration estimate, specifications, code-tour guidance, and GitHub link, with unknown IDs returning 404. The static export renders `details.html` for GEMMA and `details-<id>.html` for the other projects, so GitHub Pages does not need a Flask backend or JavaScript for these links. Verification covers all six destinations in Flask and clean static exports.

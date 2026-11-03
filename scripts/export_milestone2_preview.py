@@ -6,7 +6,7 @@ import re, shutil, sys
 ROOT=Path(__file__).resolve().parents[1]
 APP=ROOT/'submission/ActivityWebserver'
 sys.path.insert(0,str(APP))
-from app import app
+from app import app, PROJECTS
 OUT=ROOT/'portfolio/dist'
 OUT.mkdir(parents=True, exist_ok=True)
 (OUT/'assets').mkdir(parents=True, exist_ok=True)
@@ -17,6 +17,10 @@ ROUTES={'/project2':'index.html','/project2/products':'products.html',
         '/project2/products?category=learning':'products-learning.html',
         '/project2/current-project':'current-project.html',
         '/project2/details':'details.html','/project2/cart':'cart.html'}
+
+for product in PROJECTS:
+    if product['id'] != 'gemma':
+        ROUTES['/project2/details/' + product['id']] = 'details-' + product['id'] + '.html'
 
 def local_link(match):
     attribute,url=match.groups()

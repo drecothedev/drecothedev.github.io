@@ -70,3 +70,7 @@ PASS: preview regenerated from canonical source.
 An additional ZIP comparison confirmed that all 64 archived files exactly match the canonical application, with no extra or missing files. Submission source was unchanged, so the current ZIP was retained. User edits to homepage and Swim copy remain intact. Milestone 1 and the older `ActivityWebserver 2` copy were not modified.
 
 No new browser visual, keyboard, screen-reader, JavaScript runtime, school-server, or four-browser validation was performed in this fix. No hosted deployment or GitHub push was performed. Existing mock controls and the authorized time-based exploration plan remain unchanged.
+
+## Later project-detail improvement
+
+At Andre’s request, the historical shared GEMMA detail mock-up has been replaced with six project-specific pages. Verification now checks each catalog destination, matching title, repository, exploration estimate, image, unknown-ID 404, cart links, and the clean static export’s corresponding files. The retired-generator and missing-output-directory regression checks remain in place.
