@@ -1,0 +1,10 @@
+/* Multiplication table formatting moved from Activity 5 inline styles. */
+#timesTable {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+#timesTable th,
+#timesTable td {
+    border: 1px solid;
+}

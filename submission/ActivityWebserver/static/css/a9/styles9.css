@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 40px 0 24px;
+    background-color: #f3f6fa;
+    color: #19334b;
+}
+
+main {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 28px;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+/* Percentages include padding and borders for every product-list element. */
+.result-row, .result-row * {
+    box-sizing: border-box;
+}
+
+.result-row {
+    width: 100%;
+    /* Remove whitespace between inline blocks; restore text on each card. */
+    font-size: 0;
+}
+
+.list-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    padding: 5px;
+    margin: 1%;
+    border: 1px solid #b7c9dd;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #ffffff, #e0ebf7);
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+    transition: box-shadow 180ms ease;
+}
+
+.list-item img {
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: 12px auto;
+    border-radius: 8px;
+}
+
+.product-title {
+    min-height: 4.5em;
+    line-height: 1.5;
+    margin: 12px 8px;
+}
+
+.product-price {
+    margin: 12px 0 16px;
+    color: #214d77;
+    font-size: 1.2em;
+}
+
+.list-item:hover {
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(25, 51, 75, 0.22);
+}
+
+.source-note {
+    margin: 24px 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+a { color: #275784; }
+
+footer {
+    text-align: center;
+    padding: 8px 16px;
+}
+
+footer p { font-weight: 700; }

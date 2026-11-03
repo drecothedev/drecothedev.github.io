@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 6</title>
+</head>
+<body style="
+    margin: 0;
+    background-color: #071a26;
+    color: #f4ecd8;
+    font-family: Arial, Helvetica, sans-serif;
+">
+    <header style="padding: 28px 20px 12px;">
+        <p style="
+            margin: 0;
+            text-align: center;
+            font-size: 48px;
+            color: #f4b942;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: underline;
+        ">
+            PBS Eons
+        </p>
+    </header>
+
+    <main style="max-width: 760px; margin: 0 auto; padding: 20px;">
+        <div style="text-align: center;">
+            <a
+                href="https://www.imdb.com/title/tt15162110/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open the PBS Eons IMDb page"
+                title="Click to view PBS Eons on IMDb"
+                style="display: inline-block; line-height: 0; cursor: pointer;"
+            >
+                <img
+                    src="{{ url_for('static', filename='img/a6/eons-poster.jpg') }}"
+                    alt="Illustrated PBS Eons poster featuring prehistoric life on land and underwater"
+                    width="460"
+                    style="display: block; max-width: 100%; height: auto; border: 4px solid #f4b942;"
+                >
+            </a>
+            <p style="margin: 12px 0 0; color: #a9d6c8; font-size: 15px;">
+                Click the poster to view PBS Eons on IMDb.
+            </p>
+        </div>
+
+        <p style="
+            font-size: 19px;
+            line-height: 1.7;
+            color: #f4ecd8;
+            font-family: Georgia, 'Times New Roman', serif;
+            text-align: justify;
+            text-indent: 40px;
+        ">
+            <span style="
+                color: #f4b942;
+                font-size: 22px;
+                font-style: italic;
+                font-weight: bold;
+            ">PBS Eons</span>
+            journeys through the history of life on Earth. The series explores evolution,
+            paleontology, biology, and the remarkable organisms that have lived during our
+            planet's deep past.
+            <span style="
+                background-color: #f4b942;
+                color: #071a26;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+            ">Each episode turns evidence from fossils and living species into an engaging scientific story.</span>
+        </p>
+    </main>
+
+    <footer style="padding: 12px 20px 28px;">
+        <p style="
+            margin: 0;
+            color: #a9d6c8;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-style: italic;
+        ">
+            Andre Jones
+        </p>
+    </footer>
+</body>
+</html>

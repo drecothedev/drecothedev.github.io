@@ -1,0 +1,30 @@
+{% extends 'project2/base.html' %}
+{% block title %}Current Project — Swim | Andre Jones{% endblock %}
+{% block body_class %}swim-page{% endblock %}
+{% block content %}
+<section class="swim-hero" aria-labelledby="swim-heading">
+    <div class="swim-topline"><span class="eyebrow">THE OPEN STUDIO / CURRENT PROJECT</span><span class="swim-status"><i aria-hidden="true"></i> In development</span></div>
+    <div class="swim-composition">
+        <div class="swim-copy">
+            <p class="swim-kicker">What I’m working on right now.</p>
+            <h1 id="swim-heading">Swim<span>.</span></h1>
+            <p class="swim-description">Exploring GPU programming<br>in ordinary Swift.</p>
+            <a class="swim-cta" href="#project-notes">A closer look <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="swim-art" aria-hidden="true">
+            <div class="swim-aura"></div>
+            <div class="swim-sphere"><div class="swim-lens"></div><div class="swim-glint"></div></div>
+            <div class="swim-orbit orbit-one"></div><div class="swim-orbit orbit-two"></div><div class="swim-orbit orbit-three"></div>
+            <span class="swim-art-label">SWIFT / CPU / GPU</span>
+        </div>
+    </div>
+    <div class="swim-meta"><div><span class="eyebrow">FOCUS</span><strong>Swift compiler tooling</strong></div><div><span class="eyebrow">STATUS</span><strong>In development</strong></div><div><span class="eyebrow">CREATED BY</span><strong>Andre Jones</strong></div><span class="swim-meta-note">ONE FUNCTION. TWO EXECUTION TARGETS.</span></div>
+</section>
+<section class="swim-notes section" id="project-notes" aria-labelledby="notes-heading">
+    <div><span class="eyebrow">THE EXPERIMENT</span><h2 id="notes-heading">CPU, GPU<br><em>You choose...</em></h2></div>
+    <div class="swim-note-copy"><p>Swim is an experimental Swift compiler tooling project designed to make general-purpose GPU programming feel as natural as writing ordinary Swift.</p>
+        <p>The goal is to let developers write a Swift function once and execute that same function on either the CPU or GPU, without rewriting its implementation in Metal Shading Language (MSL).</p>
+        <p>I’m exploring how far Swift’s existing syntax and tooling can extend to support a high-level, expressive GPU programming experience.</p>
+        <p class="swim-development-note">In development. Shared CPU/GPU execution is the project’s goal, not a claim of a completed implementation.</p><a class="text-link" href="{{ url_for('project2_products') }}">Explore my other projects ↗</a></div>
+</section>
+{% endblock %}

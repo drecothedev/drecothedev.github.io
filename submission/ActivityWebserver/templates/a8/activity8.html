@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 8</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* The assignment requires the font rule to be embedded. */
+        body { font-family: "Lato", Arial, sans-serif; }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/a8/styles8.css') }}">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('hello') }}">Activities Homepage</a>
+        <h1>Travel Destinations</h1>
+    </header>
+    <main>
+        <table>
+            <caption>Top 5 Travel To-Dos</caption>
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Destination / Activity</th>
+                    <th scope="col">Location / City</th>
+                    <th scope="col">Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="{{ url_for('static', filename='img/a8/paris.jpg') }}" alt="Eiffel Tower above the rooftops of Paris"></td>
+                    <td>Visit the Eiffel Tower</td>
+                    <td>Paris</td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td><img src="{{ url_for('static', filename='img/a8/rome.jpg') }}" alt="The ancient Colosseum in Rome"></td>
+                    <td>Explore the Colosseum</td>
+                    <td>Rome</td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td><img src="{{ url_for('static', filename='img/a8/kyoto.jpg') }}" alt="Traditional Japanese architecture in Kyoto"></td>
+                    <td>Walk through historic Kyoto</td>
+                    <td>Kyoto</td>
+                    <td>Japan</td>
+                </tr>
+                <tr>
+                    <td><img src="{{ url_for('static', filename='img/a8/santorini.jpg') }}" alt="White buildings and blue domes overlooking the sea in Santorini"></td>
+                    <td>Enjoy the views of Santorini</td>
+                    <td>Santorini</td>
+                    <td>Greece</td>
+                </tr>
+                <tr>
+                    <td><img src="{{ url_for('static', filename='img/a8/new-york.jpg') }}" alt="New York City's Manhattan skyline"></td>
+                    <td>Discover Manhattan</td>
+                    <td>New York City</td>
+                    <td>United States</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>Andre Jones</p>
+    </footer>
+</body>
+</html>

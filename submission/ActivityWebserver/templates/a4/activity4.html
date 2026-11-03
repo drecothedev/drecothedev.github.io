@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activity 4</title>
+
+</head>
+<body>
+<h1>Multimedia</h1>
+<h2>andre jones</h2>
+<h1>Photos</h1>
+<img alt="Activity 4 photo" width="640" height="360" src = "{{ url_for('static', filename='img/a4/swift.jpg') }}">
+<img alt="Activity 4 photo" width="640" height="360" src = "{{ url_for('static', filename='img/a4/Golang.png') }}">
+<img alt="Activity 4 photo" width="640" height="360" src = "https://raw.githubusercontent.com/Benio101/cpp-logo/master/cpp_logo.png">
+<h1>Videos</h1>
+<video width="640" height="360" autoplay loop>
+<source src="{{ url_for('static', filename='video/vid1.mp4') }}" type="video/mp4">
+</video>
+<video width="640" height="360" controls poster="{{ url_for('static', filename='img/a4/smokey.jpg') }}">
+<source src="{{ url_for('static', filename='video/vid2.mp4') }}" type="video/mp4">
+</video>
+<h1>Audio</h1>
+<audio controls>
+<source src="{{ url_for('static', filename='audio/sd1.wav') }}" type="audio/wav">
+your browser does not support audio
+</audio>
+<audio controls>
+<source src="{{ url_for('static', filename='audio/sd2.wav') }}" type="audio/wav">
+your browser does not support audio
+</audio>
+</body>
+</html>

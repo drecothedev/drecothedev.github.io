@@ -1,0 +1,5 @@
+{# Callers supply project, image_sizes, and optionally image_loading. #}
+<img class="{{ project.image_class }}" src="{{ url_for('static', filename='img/project2/' ~ project.image) }}"
+     {% if project.responsive_image %}srcset="{% for width in [180,360,720] %}{{ url_for('static', filename='img/project2/' ~ project.responsive_image ~ '-' ~ width ~ '.webp') }} {{ width }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="{{ image_sizes }}"{% endif %}
+     width="{{ project.image_width }}" height="{{ project.image_height }}"
+     alt="{{ project.alt }}" loading="{{ image_loading|default('lazy') }}" decoding="async">

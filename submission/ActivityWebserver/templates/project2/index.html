@@ -1,0 +1,525 @@
+{% extends 'project2/base.html' %}
+{% block content %}
+
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="eyebrow">
+                <span>
+                    <i></i>
+                    andre jones / Human
+                </span>
+
+                <span>
+                    Reno, Nevada
+                </span>
+            </div>
+
+            <h1>
+                Ciao!<br>
+                <span class="code-word">
+                </span>
+            </h1>
+
+            <div class="hero-bottom">
+                <p>
+                    I build with Swift, explore how languages work,<br class="desktop">
+                    and make software for people.
+                </p>
+
+                <a href="{{ url_for('project2_products') }}" class="round-link">
+                    Explore the projects
+                    <span>↓</span>
+                </a>
+            </div>
+
+            <div class="liquid-orb" aria-hidden="true"><div class="orb-ring"></div><span>always in development</span></div>
+        </section>
+
+
+        <!-- Ticker -->
+        <div class="ticker">
+            <span>SWIFT</span>
+            <b>✳</b>
+
+            <span>iOS DEVELOPMENT</span>
+            <b>✳</b>
+
+            <span>PROGRAMMING LANGUAGES</span>
+            <b>✳</b>
+
+            <span>AUDIO & CODE</span>
+            <b>✳</b>
+        </div>
+
+
+        <!-- Work -->
+        <section class="work section" id="work">
+            <nav class="project-categories" aria-label="Project categories">
+                <a href="{{ url_for('project2_products', category='apps') }}">iOS apps</a>
+                <a href="{{ url_for('project2_products', category='languages') }}">Programming languages</a>
+                <a href="{{ url_for('project2_products', category='learning') }}">Learning resources</a>
+            </nav>
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">
+                        01 / SELECTED WORK
+                    </span>
+
+                    <h2>
+                        Things I’ve built.
+                    </h2>
+                </div>
+
+                <span class="small-note">
+                    IDEAS, EXPERIMENTS & WORK IN PROGRESS
+                </span>
+            </div>
+
+
+            <!-- GEMMA -->
+            <article class="feature" id="ios-projects">
+
+                <div class="project-visual gemma">
+                    <span class="visual-label">
+                        GEMMA / iOS
+                    </span>
+
+                    <div class="halo"></div>
+
+                    <img
+                        src="{{ url_for('static', filename='img/project2/gemma-360.webp') }}"
+                        alt="GEMMA mock interview app screenshot" width="360" height="782" decoding="async" sizes="170px" srcset="{{ url_for('static', filename='img/project2/gemma-180.webp') }} 180w, {{ url_for('static', filename='img/project2/gemma-360.webp') }} 360w, {{ url_for('static', filename='img/project2/gemma-720.webp') }} 720w"
+                        loading="lazy"
+                    >
+
+                    <span class="visual-foot">
+                        Practice builds confidence. Feedback builds skill.
+                    </span>
+                </div>
+
+                <div class="project-copy">
+                    <span class="eyebrow">
+                        01 — iOS APPLICATION
+                    </span>
+
+                    <h3>
+                        GEMMA<span>↗</span>
+                    </h3>
+
+                    <p class="lead">
+                        Practice builds confidence<br>
+                        Feedback builds skill.
+                    </p>
+
+                    <p>
+                        An AI-powered mock interview app with voice interaction
+                        and personalized spoken feedback. Built for the
+                        University of Nevada, Reno’s Biggest Little Hackathon.
+                    </p>
+
+                    <div class="award">
+                        ✳ Best Completed Project · 2025
+                    </div>
+
+                    <div class="tags">
+                        <span>Swift</span>
+                        <span>Firebase</span>
+                        <span>Firestore</span>
+                        <span>Voice interaction</span>
+                    </div>
+
+                    <a
+                        class="text-link"
+                        href="https://github.com/drecothedev/GemmaClean"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Explore the repository ↗
+                    </a>
+                </div>
+
+            </article>
+
+
+            <!-- Jess -->
+            <article class="feature reverse" id="language-projects">
+
+                <div class="project-visual jess">
+                    <span class="visual-label">
+                        JESS / LANGUAGE LAB
+                    </span>
+
+                    <div class="terminal">
+
+                        <div class="terminal-bar">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+
+                            <span>
+                                JessLangCLI
+                            </span>
+                        </div>
+
+                        <pre><span class="dim">// From source to meaning.</span>
+<span class="green">source</span>
+  ↓
+scanner <span class="dim">→ tokens</span>
+  ↓
+parser  <span class="dim">→ syntax tree</span>
+  ↓
+<span class="green">interpreter</span></pre>
+
+                        <div class="terminal-footer">
+                            SWIFT · TREE-WALK INTERPRETER
+                        </div>
+
+                    </div>
+
+                    <span class="visual-foot">
+                        THE TOOLS BEHIND THE TOOLS?
+                    </span>
+                </div>
+
+                <div class="project-copy">
+                    <span class="eyebrow">
+                        02 — PROGRAMMING LANGUAGE / IN PROGRESS
+                    </span>
+
+                    <h3>
+                        Jess<span>↗</span>
+                    </h3>
+
+                    <p class="lead">
+                        ...but how does code run?<br>
+                    </p>
+
+                    <p>
+                        My exploration of language design: a Swift interpreter
+                        with scanning, recursive-descent parsing, an abstract
+                        syntax tree, and tree-walk interpretation. An ongoing
+                        learning project inspired by Crafting Interpreters.
+                    </p>
+
+                    <div class="tags">
+                        <span>Swift</span>
+                        <span>Compiler design</span>
+                        <span>AST</span>
+                        <span>XCTest</span>
+                    </div>
+
+                    <a
+                        class="text-link"
+                        href="https://github.com/drecothedev/JessLangCLI"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Explore the repository ↗
+                    </a>
+                </div>
+
+            </article>
+
+
+            <!-- Sxmpler -->
+            <article class="feature">
+
+                <div class="project-visual sxmpler">
+                    <span class="visual-label">
+                        SXMPLER / AUDIO TOOLS
+                    </span>
+
+                    <div
+                        class="soundwave"
+                        aria-hidden="true"
+                    ></div>
+
+                    <img
+                        src="{{ url_for('static', filename='img/project2/sxmpler-360.webp') }}"
+                        alt="Sxmpler audio analysis app screenshot" width="360" height="739" decoding="async" sizes="170px" srcset="{{ url_for('static', filename='img/project2/sxmpler-180.webp') }} 180w, {{ url_for('static', filename='img/project2/sxmpler-360.webp') }} 360w, {{ url_for('static', filename='img/project2/sxmpler-720.webp') }} 720w"
+                        loading="lazy"
+                    >
+
+              
+                </div>
+
+                <div class="project-copy">
+                    <span class="eyebrow">
+                        03 — iOS APPLICATION
+                    </span>
+
+                    <h3>
+                        Sxmpler<span>↗</span>
+                    </h3>
+
+                    <p class="lead">
+                        Sampling made simple.<br>
+                    </p>
+
+                    <p>
+                        An iOS app that detects the key and BPM of imported audio.
+                        Analysis runs on-device using Apple’s MusicUnderstanding
+                        framework, with an interface built in SwiftUI.
+                    </p>
+
+                    <div class="tags">
+                        <span>SwiftUI</span>
+                        <span>AVFoundation</span>
+                        <span>MusicUnderstanding</span>
+                        <span>Concurrency</span>
+                    </div>
+
+                    <a
+                        class="text-link"
+                        href="https://github.com/drecothedev/Sxmpler27"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Explore the repository ↗
+                    </a>
+                </div>
+
+            </article>
+
+
+            <!-- Project Archive -->
+            <div class="archive-top">
+                <h3>
+                    The project archive.
+                </h3>
+
+            </div>
+
+
+            <div class="archive">
+
+                <a
+                    id="learning-projects"
+                    href="https://github.com/drecothedev/Swift-Is-MyLife"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <span class="index">
+                        04
+                    </span>
+
+                    <div>
+                        <h4>
+                            Swift Is My Life
+                        </h4>
+
+                        <p>
+                            A shared journal of Swift fundamentals,
+                            SwiftUI, and concurrency :)
+                        </p>
+                    </div>
+
+                    <span class="category">
+                        LEARNING RESOURCE
+                    </span>
+
+                    <span>↗</span>
+                </a>
+
+
+                <a
+                    href="https://github.com/drecothedev/Worder"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <span class="index">
+                        05
+                    </span>
+
+                    <div>
+                        <h4>
+                            Worder
+                        </h4>
+
+                        <p>
+                            A simple trie implementation in Swift and SwiftUI.
+                        </p>
+                    </div>
+
+                    <span class="category">
+                        DATA STRUCTURES / iOS
+                    </span>
+
+                    <span>↗</span>
+                </a>
+
+
+                <a
+                    href="https://github.com/drecothedev/YenToUSDConverter"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <span class="index">
+                        06
+                    </span>
+
+                    <div>
+                        <h4>
+                            Yen to USD Converter
+                        </h4>
+
+                        <p>
+                            An educational currency conversion project
+                            built in Swift.
+                        </p>
+                    </div>
+
+                    <span class="category">
+                        SWIFT / EDUCATIONAL
+                    </span>
+
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+            <a
+                class="text-link archive-link"
+                href="https://github.com/drecothedev"
+                target="_blank"
+                rel="noopener"
+            >
+                More on GitHub ↗
+            </a>
+
+        </section>
+
+
+        <!-- About -->
+        <section class="about section" id="about">
+
+            <span class="eyebrow">
+                02 / A LITTLE CONTEXT
+            </span>
+
+            <div class="about-grid">
+
+                <h2>
+                    A primate with <br>
+                    A bunch of questions.
+                </h2>
+
+                <div>
+                    <p class="about-lead">
+                        Hello, i'm a developer in Reno with a love for
+                        computer science and music.
+                    </p>
+
+                    <p>
+                        i'm currently a Technical Specialist at Apple, I help people solve
+                        hardware and software problems every day. I love it! I get to see thousands of people 
+                        interact with techology thus gaining a strong appreciation for both hardware and softwre, and 
+                        the fragile line the two must walk to be successful. 
+                    </p>
+
+                    <p>
+                        Outside of work, I study computer science and build
+                        software. Swift is my primary language, but i also enjoy using C++ and Go. 
+                        Compilers and programming languages are very interesting to me. i also just recently
+                        started to learn about audio software development and golly g it is cool!
+                    </p>
+
+                    <p>
+                        I’m pursuing software engineering opportunities where I
+                        can contribute to the tools and experiences people rely on.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="facts">
+
+                <div>
+                    <span class="eyebrow">
+                        CURRENT ROLE
+                    </span>
+
+                    <strong>
+                        Technical Specialist
+                    </strong>
+
+                    <span>
+                        Apple · Reno, NV · August 2026–present
+                    </span>
+                </div>
+
+
+                <div>
+                    <span class="eyebrow">
+                        EDUCATION
+                    </span>
+
+                    <strong>
+                        Business Information Systems
+                    </strong>
+
+                    <span>
+                        Bachelor’s · University of Nevada, Reno · 2024
+                    </span>
+                </div>
+
+
+                <div>
+                    <span class="eyebrow">
+                        FOCUS
+                    </span>
+
+                    <strong>
+                        Swift. Systems. Sound.
+                    </strong>
+
+                    <span>
+                        iOS · Programming languages · Audio
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact -->
+        <section class="contact section" id="contact">
+
+            <span class="eyebrow">
+                03 / WHAT’S NEXT
+            </span>
+
+            <h2>
+                let's build?<br>
+              
+            </h2>
+
+            <div class="contact-bottom">
+
+                <p>
+                    Have a software engineering opportunity<br>
+                    or a project you’d like to talk about?
+                </p>
+
+                <a href="mailto:andreamj2001@gmail.com">
+                    Get in touch
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+        <section class="account section" id="account">
+            <span class="eyebrow">04 / ACCOUNT CONTROLS</span>
+            <h2>Explore as a guest.</h2>
+            <p>These account controls are navigation mock-ups. No account is created and no credentials are collected.</p>
+            <div class="account-controls">
+                <details><summary>Sign in</summary><p>Sign-in functionality is planned for a later milestone. All portfolio projects are available to guests.</p></details>
+                <details><summary>Sign out</summary><p>You are browsing as a guest. There is no active account session to sign out of.</p></details>
+            </div>
+        </section>
+    {% endblock %}

@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Andre Jones — Swift applications, programming languages, and audio experiments.">
+<title>{% block title %}Andre Jones — Software & Experiments{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project2/styles.css') }}">
+</head><body class="{% block body_class %}{% endblock %}"><a class="skip" href="#main">Skip to content</a>
+{% include 'project2/header.html' %}
+<main id="main">{% block content %}{% endblock %}</main>
+{% include 'project2/footer.html' %}
+<div class="cursor-spotlight" aria-hidden="true"></div>
+<script src="{{ url_for('static', filename='js/project2/spotlight.js') }}" defer></script>
+</body></html>

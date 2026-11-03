@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Only the font rule is embedded, as required by the assignment. */
+        body { font-family: "Nunito Sans", Arial, sans-serif; }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/a9/styles9.css') }}">
+</head>
+<body>
+    <main>
+        <h1>NeoPixel LEDs for Creative Projects</h1>
+        <div class="result-row">
+            <div class="list-item">
+                <img src="{{ url_for('static', filename='img/a9/1463.jpg') }}" alt="Hand holding a colorful 16-LED NeoPixel ring">
+                <p class="product-title">NeoPixel Ring - 16 x 5050 RGB LED with Integrated Drivers</p>
+                <p class="product-price">$9.95</p>
+            </div>
+            <div class="list-item">
+                <img src="{{ url_for('static', filename='img/a9/1643.jpg') }}" alt="Hand holding a colorful 12-LED NeoPixel ring">
+                <p class="product-title">NeoPixel Ring - 12 x 5050 RGB LED with Integrated Drivers</p>
+                <p class="product-price">$8.95</p>
+            </div>
+            <div class="list-item">
+                <img src="{{ url_for('static', filename='img/a9/1426.jpg') }}" alt="NeoPixel stick with eight LEDs on a narrow circuit board">
+                <p class="product-title">NeoPixel Stick - 8 x 5050 RGB LED with Integrated Drivers</p>
+                <p class="product-price">$5.95</p>
+            </div>
+        </div>
+        <div class="result-row">
+            <div class="list-item">
+                <img src="{{ url_for('static', filename='img/a9/1586.jpg') }}" alt="Hand holding a colorful 24-LED NeoPixel ring">
+                <p class="product-title">NeoPixel Ring - 24 x 5050 RGB LED with Integrated Drivers</p>
+                <p class="product-price">$16.95</p>
+            </div>
+            <div class="list-item">
+                <img src="{{ url_for('static', filename='img/a9/1768.jpg') }}" alt="Example of an assembled NeoPixel ring; this product supplies one quarter">
+                <p class="product-title">NeoPixel 1/4 60 Ring - 5050 RGB LED w/ Integrated Drivers</p>
+                <p class="product-price">$9.95</p>
+            </div>
+            <div class="list-item">
+                <img src="{{ url_for('static', filename='img/a9/2226.jpg') }}" alt="Seven-LED NeoPixel Jewel glowing in rainbow colors beside a controller">
+                <p class="product-title">NeoPixel Jewel - 7 x 5050 RGB LED with Integrated Drivers</p>
+                <p class="product-price">$5.95</p>
+            </div>
+        </div>
+        <p class="source-note">Products and photos from <a href="https://www.adafruit.com/category/168">Adafruit</a>. Prices in USD, recorded October 5, 2026.</p>
+    </main>
+    <footer>
+        <p>Andre Jones</p>
+        <a href="{{ url_for('hello') }}">Activities Homepage</a>
+    </footer>
+</body>
+</html>
